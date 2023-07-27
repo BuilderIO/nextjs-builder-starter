@@ -9,20 +9,19 @@ export default async function Page() {
       <h1 className="py-20 text-3xl text-center text-teal-500">
         Testimonial page
       </h1>
-      <ul className="carousel gap-6 ml-8">
+      <ul className="carousel gap-6 mx-8">
         {testimonials?.map(({ data, id }: BuilderContent) => (
           <li key={id} className="carousel-item">
-            <article className="card card-side bg-base-100 max-w-screen-md shadow-xl">
-              <figure className="h-full">
-                <img width="320" height="320"
-                  className="object-cover"
+            <article className="card card-side bg-base-100 max-w-screen-md max-h-96 shadow-xl">
+              <figure className="max-w-sm">
+                <img width="420" height="420"
+                  className="object-cover w-full h-full"
                   src={data!.personImage}
                   alt={data!.personName} />
               </figure>
-              <div className="card-body">
+              <div className="card-body max-w-xs">
                 <h2 className="text-xl">{data!.personName}</h2>
-                <p>{data!.content}</p>
-
+                <p className="line-clamp-[12]">{data!.content}</p>
               </div>
             </article>
           </li>))}
