@@ -24,9 +24,6 @@ export default async function Page(props: PageProps) {
     // Convert the result to a promise
     .toPromise();
 
-  const testimonials = await builder.getAll("testimonial", { prerender: false });
-  console.log({ testimonials: JSON.stringify(testimonials, null, 2) });
-
   return (
     <>
       {/* Render the Builder page */}
